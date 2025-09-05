@@ -1,9 +1,1 @@
-The 'targetConfigs' folder contains target-configuration (.ccxml) files, automatically generated based
-on the device and connection settings specified in your project on the Properties > General page.
-
-Please note that in automatic target-configuration management, changes to the project's device and/or
-connection settings will either modify an existing or generate a new target-configuration file. Thus,
-if you manually edit these auto-generated files, you may need to re-apply your changes. Alternatively,
-you may create your own target-configuration file for this project and manage it manually. You can
-always switch back to automatic target-configuration management by checking the "Manage the project's
-target-configuration automatically" checkbox on the project's Properties > General page.
+In rccarmain.c, it has an interrupt handler and a main loop. In the handler, it is taking in two ADC values from the joystick on the remote controller, one for x, one for y, and then transmitting that on UART. In main, it is receiving the ADC value through UART and translating the values the motors corresponding speed using two PWM function, one for each motor. UART transmission is blind-cycle while UART receiving is interrupt based. There are a lot of functions at the beginning of the code which were used in different methods of getting the car to run, and not all of them are in use.
